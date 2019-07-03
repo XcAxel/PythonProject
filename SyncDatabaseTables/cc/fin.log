@@ -1,0 +1,11 @@
+
+Logging initialized using configuration in file:/opt/hive/conf/hive-log4j.properties
+OK
+Time taken: 0.875 seconds, Fetched: 14 row(s)
+1
+
+Logging initialized using configuration in file:/opt/hive/conf/hive-log4j.properties
+OK
+Time taken: 0.935 seconds, Fetched: 69 row(s)
+1
+19/02/19 17:26:09 INFO fs.TrashPolicyDefault: Moved: 'hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_fin_rooms_hotel_budget_exchange_rate/dt=2018-12-02' to trash at: hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/.Trash/Current/user/hive/warehouse/cdm.db/t_cdm_fin_rooms_hotel_budget_exchange_rate/dt=2018-12-02

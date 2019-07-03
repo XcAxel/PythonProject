@@ -1,0 +1,23 @@
+同步Prod环境hive数据到beta环境（只包含正在使用的）
+1.切换hive用户 sudo su - hive
+2.执行bash /home/q/www/tools/sync_hive_tables_data.sh
+3.执行bash /home/q/www/tools/sync_kylin_cm.sh
+单表同步：
+1.登录etl机器
+2.调用同步脚本
+同步hive表数据：
+python /home/q/www/tools/hive_table_sync.py -T 'cdm.t_cdm_fin_fb_hotel_exchange_rate_ful' -f Prod -t Beta
+说明：
+T, --table tables to sync
+-f,--from: [Dev, Beta, Prod]
+-t,--to: [Dev, Beta]
+同步kylin的model和cube：
+python /home/q/www/tools/kylin_meta_sync.py -m -c --project=data_center_test --model=m_cdm_fin_fb_hotel_budget_exchange_rate_view_ful --cube=c_cdm_fin_fb_hotel_budget_exchange_rate_view_ful_1 -f Prod -t Beta
+说明：
+-m: whether to sync model
+-c: whether to sync cube
+--project: project name
+--model: model name
+--cube: cube name
+-f,--from: [Dev, Beta, Prod]
+-t,--to: [Dev, Beta, Prod]

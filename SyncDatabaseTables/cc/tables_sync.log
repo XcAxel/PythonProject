@@ -1,0 +1,395 @@
+which: no hbase in (/opt/kylin/bin/:/usr/java/default/bin/:/home/q/java/jdk-default/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/hbase/bin:/opt/hive-1.1.0-cdh5.10.1/bin:/opt/hive-1.1.0-cdh5.10.1/hcatalog/bin:/usr/local/bin:/opt/anaconda3/bin:/home/hive/.local/bin:/home/hive/bin)
+
+Logging initialized using configuration in file:/opt/hive/conf/hive-log4j.properties
+OK
+Time taken: 3.691 seconds, Fetched: 16 row(s)
+1
+which: no hbase in (/opt/kylin/bin/:/usr/java/default/bin/:/home/q/java/jdk-default/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/hbase/bin:/opt/hive-1.1.0-cdh5.10.1/bin:/opt/hive-1.1.0-cdh5.10.1/hcatalog/bin:/usr/local/bin:/opt/anaconda3/bin:/home/hive/.local/bin:/home/hive/bin)
+
+Logging initialized using configuration in file:/opt/hive/conf/hive-log4j.properties
+OK
+Time taken: 3.72 seconds, Fetched: 79 row(s)
+1
+19/03/19 11:57:23 INFO fs.TrashPolicyDefault: Moved: 'hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_enrolment_channel_ful' to trash at: hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/.Trash/Current/user/hive/warehouse/cdm.db/t_cdm_gc_enrolment_channel_ful1552967843992
+c=`hive -e "show databases" | grep "^cdm$" | wc -l` && if [ $c -eq 1 ];then echo 1; else exit 1; fi
+c=`hive -e "show tables in cdm" | grep "^t_cdm_gc_enrolment_channel_ful$" | wc -l` && if [ $c -eq 1 ];then echo 1; else exit 1; fi
+which: no hbase in (/opt/kylin/bin/:/usr/java/default/bin/:/home/q/java/jdk-default/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/hbase/bin:/opt/hive-1.1.0-cdh5.10.1/bin:/opt/hive-1.1.0-cdh5.10.1/hcatalog/bin:/usr/local/bin:/opt/anaconda3/bin:/home/hive/.local/bin:/home/hive/bin)  Logging initialized using configuration in file:/opt/hive/conf/hive-log4j.properties OK CREATE TABLE `cdm.t_cdm_gc_enrolment_channel_ful`(   `year` int COMMENT 'year',    `month` int COMMENT 'month',    `day` int COMMENT 'day',    `channel` string COMMENT 'channel',    `diff_type` string COMMENT 'diff type',    `currency_type` string COMMENT '货币类型',    `indicator_type` string COMMENT ' type',    `indicator_value` decimal(22,6) COMMENT '') COMMENT '会员注册(渠道)' ROW FORMAT SERDE    'org.apache.hadoop.hive.ql.io.orc.OrcSerde'  WITH SERDEPROPERTIES (    'field.delim'='\t',    'line.delim'='\n',    'serialization.format'='\t')  STORED AS INPUTFORMAT    'org.apache.hadoop.hive.ql.io.orc.OrcInputFormat'  OUTPUTFORMAT    'org.apache.hadoop.hive.ql.io.orc.OrcOutputFormat' LOCATION   'hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_enrolment_channel_ful' TBLPROPERTIES (   'COLUMN_STATS_ACCURATE'='true',    'numFiles'='4',    'numRows'='2521',    'rawDataSize'='1232783',    'totalSize'='14456',    'transient_lastDdlTime'='1546449532') Time taken: 3.977 seconds, Fetched: 29 row(s)
+can't find .cdm partition, maybe is's not a partition table, so continue.
+hdfs dfs -rm -r -f hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_enrolment_channel_ful
+hdfs dfs -mkdir -p hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_enrolment_channel_ful
+hdfs dfs -cp -f hdfs://l-namenode2.dc.cn1:8020/user/hive/warehouse/cdm.db/t_cdm_gc_enrolment_channel_ful/* hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_enrolment_channel_ful
+success
+[43;31m ============================================11====================================================== [0m
+which: no hbase in (/opt/kylin/bin/:/usr/java/default/bin/:/home/q/java/jdk-default/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/hbase/bin:/opt/hive-1.1.0-cdh5.10.1/bin:/opt/hive-1.1.0-cdh5.10.1/hcatalog/bin:/usr/local/bin:/opt/anaconda3/bin:/home/hive/.local/bin:/home/hive/bin)
+
+Logging initialized using configuration in file:/opt/hive/conf/hive-log4j.properties
+OK
+Time taken: 3.693 seconds, Fetched: 16 row(s)
+1
+which: no hbase in (/opt/kylin/bin/:/usr/java/default/bin/:/home/q/java/jdk-default/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/hbase/bin:/opt/hive-1.1.0-cdh5.10.1/bin:/opt/hive-1.1.0-cdh5.10.1/hcatalog/bin:/usr/local/bin:/opt/anaconda3/bin:/home/hive/.local/bin:/home/hive/bin)
+
+Logging initialized using configuration in file:/opt/hive/conf/hive-log4j.properties
+OK
+Time taken: 3.789 seconds, Fetched: 79 row(s)
+1
+19/03/19 11:57:52 INFO fs.TrashPolicyDefault: Moved: 'hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_enrolment_ful' to trash at: hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/.Trash/Current/user/hive/warehouse/cdm.db/t_cdm_gc_enrolment_ful1552967872788
+c=`hive -e "show databases" | grep "^cdm$" | wc -l` && if [ $c -eq 1 ];then echo 1; else exit 1; fi
+c=`hive -e "show tables in cdm" | grep "^t_cdm_gc_enrolment_ful$" | wc -l` && if [ $c -eq 1 ];then echo 1; else exit 1; fi
+which: no hbase in (/opt/kylin/bin/:/usr/java/default/bin/:/home/q/java/jdk-default/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/hbase/bin:/opt/hive-1.1.0-cdh5.10.1/bin:/opt/hive-1.1.0-cdh5.10.1/hcatalog/bin:/usr/local/bin:/opt/anaconda3/bin:/home/hive/.local/bin:/home/hive/bin)  Logging initialized using configuration in file:/opt/hive/conf/hive-log4j.properties OK CREATE TABLE `cdm.t_cdm_gc_enrolment_ful`(   `hotel` string COMMENT 'hotel code',    `year` int COMMENT 'year',    `month` int COMMENT 'month',    `day` int COMMENT 'day',    `diff_type` string COMMENT '',    `currency_type` string COMMENT '货币类型',    `indicator_type` string COMMENT ' type',    `indicator_value` decimal(22,6) COMMENT '') COMMENT '会员注册' ROW FORMAT SERDE    'org.apache.hadoop.hive.ql.io.orc.OrcSerde'  WITH SERDEPROPERTIES (    'field.delim'='\t',    'line.delim'='\n',    'serialization.format'='\t')  STORED AS INPUTFORMAT    'org.apache.hadoop.hive.ql.io.orc.OrcInputFormat'  OUTPUTFORMAT    'org.apache.hadoop.hive.ql.io.orc.OrcOutputFormat' LOCATION   'hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_enrolment_ful' TBLPROPERTIES (   'COLUMN_STATS_ACCURATE'='true',    'numFiles'='26',    'numRows'='63121',    'rawDataSize'='30572055',    'totalSize'='289795',    'transient_lastDdlTime'='1546459285') Time taken: 3.978 seconds, Fetched: 29 row(s)
+can't find .cdm partition, maybe is's not a partition table, so continue.
+hdfs dfs -rm -r -f hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_enrolment_ful
+hdfs dfs -mkdir -p hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_enrolment_ful
+hdfs dfs -cp -f hdfs://l-namenode2.dc.cn1:8020/user/hive/warehouse/cdm.db/t_cdm_gc_enrolment_ful/* hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_enrolment_ful
+success
+[43;31m ============================================12====================================================== [0m
+which: no hbase in (/opt/kylin/bin/:/usr/java/default/bin/:/home/q/java/jdk-default/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/hbase/bin:/opt/hive-1.1.0-cdh5.10.1/bin:/opt/hive-1.1.0-cdh5.10.1/hcatalog/bin:/usr/local/bin:/opt/anaconda3/bin:/home/hive/.local/bin:/home/hive/bin)
+
+Logging initialized using configuration in file:/opt/hive/conf/hive-log4j.properties
+OK
+Time taken: 3.81 seconds, Fetched: 16 row(s)
+1
+which: no hbase in (/opt/kylin/bin/:/usr/java/default/bin/:/home/q/java/jdk-default/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/hbase/bin:/opt/hive-1.1.0-cdh5.10.1/bin:/opt/hive-1.1.0-cdh5.10.1/hcatalog/bin:/usr/local/bin:/opt/anaconda3/bin:/home/hive/.local/bin:/home/hive/bin)
+
+Logging initialized using configuration in file:/opt/hive/conf/hive-log4j.properties
+OK
+Time taken: 3.74 seconds, Fetched: 79 row(s)
+1
+19/03/19 11:58:23 INFO fs.TrashPolicyDefault: Moved: 'hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_membership_country_ful' to trash at: hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/.Trash/Current/user/hive/warehouse/cdm.db/t_cdm_gc_membership_country_ful1552967903446
+c=`hive -e "show databases" | grep "^cdm$" | wc -l` && if [ $c -eq 1 ];then echo 1; else exit 1; fi
+c=`hive -e "show tables in cdm" | grep "^t_cdm_gc_membership_country_ful$" | wc -l` && if [ $c -eq 1 ];then echo 1; else exit 1; fi
+which: no hbase in (/opt/kylin/bin/:/usr/java/default/bin/:/home/q/java/jdk-default/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/hbase/bin:/opt/hive-1.1.0-cdh5.10.1/bin:/opt/hive-1.1.0-cdh5.10.1/hcatalog/bin:/usr/local/bin:/opt/anaconda3/bin:/home/hive/.local/bin:/home/hive/bin)  Logging initialized using configuration in file:/opt/hive/conf/hive-log4j.properties OK CREATE TABLE `cdm.t_cdm_gc_membership_country_ful`(   `year` int COMMENT 'year',    `month` int COMMENT 'month',    `day` int COMMENT 'day',    `area_type` string COMMENT 'area type',    `area` string COMMENT 'area',    `diff_type` string COMMENT 'diff type',    `currency_type` string COMMENT 'currency type',    `indicator_type` string COMMENT 'indicator type',    `indicator_value` decimal(22,6) COMMENT 'value') COMMENT 'membership country分布' ROW FORMAT SERDE    'org.apache.hadoop.hive.ql.io.orc.OrcSerde'  WITH SERDEPROPERTIES (    'field.delim'='\t',    'line.delim'='\n',    'serialization.format'='\t')  STORED AS INPUTFORMAT    'org.apache.hadoop.hive.ql.io.orc.OrcInputFormat'  OUTPUTFORMAT    'org.apache.hadoop.hive.ql.io.orc.OrcOutputFormat' LOCATION   'hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_membership_country_ful' TBLPROPERTIES (   'COLUMN_STATS_ACCURATE'='true',    'numFiles'='0',    'numRows'='153204',    'rawDataSize'='89181859',    'totalSize'='0',    'transient_lastDdlTime'='1547223827') Time taken: 3.929 seconds, Fetched: 30 row(s)
+can't find .cdm partition, maybe is's not a partition table, so continue.
+hdfs dfs -rm -r -f hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_membership_country_ful
+hdfs dfs -mkdir -p hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_membership_country_ful
+hdfs dfs -cp -f hdfs://l-namenode2.dc.cn1:8020/user/hive/warehouse/cdm.db/t_cdm_gc_membership_country_ful/* hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_membership_country_ful
+success
+[43;31m ============================================13====================================================== [0m
+which: no hbase in (/opt/kylin/bin/:/usr/java/default/bin/:/home/q/java/jdk-default/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/hbase/bin:/opt/hive-1.1.0-cdh5.10.1/bin:/opt/hive-1.1.0-cdh5.10.1/hcatalog/bin:/usr/local/bin:/opt/anaconda3/bin:/home/hive/.local/bin:/home/hive/bin)
+
+Logging initialized using configuration in file:/opt/hive/conf/hive-log4j.properties
+OK
+Time taken: 3.777 seconds, Fetched: 16 row(s)
+1
+which: no hbase in (/opt/kylin/bin/:/usr/java/default/bin/:/home/q/java/jdk-default/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/hbase/bin:/opt/hive-1.1.0-cdh5.10.1/bin:/opt/hive-1.1.0-cdh5.10.1/hcatalog/bin:/usr/local/bin:/opt/anaconda3/bin:/home/hive/.local/bin:/home/hive/bin)
+
+Logging initialized using configuration in file:/opt/hive/conf/hive-log4j.properties
+OK
+Time taken: 3.92 seconds, Fetched: 79 row(s)
+1
+19/03/19 11:58:52 INFO fs.TrashPolicyDefault: Moved: 'hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_membership_kpi_ful' to trash at: hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/.Trash/Current/user/hive/warehouse/cdm.db/t_cdm_gc_membership_kpi_ful1552967932461
+c=`hive -e "show databases" | grep "^cdm$" | wc -l` && if [ $c -eq 1 ];then echo 1; else exit 1; fi
+c=`hive -e "show tables in cdm" | grep "^t_cdm_gc_membership_kpi_ful$" | wc -l` && if [ $c -eq 1 ];then echo 1; else exit 1; fi
+which: no hbase in (/opt/kylin/bin/:/usr/java/default/bin/:/home/q/java/jdk-default/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/hbase/bin:/opt/hive-1.1.0-cdh5.10.1/bin:/opt/hive-1.1.0-cdh5.10.1/hcatalog/bin:/usr/local/bin:/opt/anaconda3/bin:/home/hive/.local/bin:/home/hive/bin)  Logging initialized using configuration in file:/opt/hive/conf/hive-log4j.properties OK CREATE TABLE `cdm.t_cdm_gc_membership_kpi_ful`(   `hotel` string COMMENT 'hotel code',    `year` int COMMENT 'year',    `month` int COMMENT 'month',    `day` int COMMENT 'day',    `diff_type` string COMMENT 'diff type',    `currency_type` string COMMENT 'currency type',    `indicator_type` string COMMENT 'indicator type',    `indicator_value` decimal(22,6) COMMENT 'value') COMMENT 'membership分布' ROW FORMAT SERDE    'org.apache.hadoop.hive.ql.io.orc.OrcSerde'  WITH SERDEPROPERTIES (    'field.delim'='\t',    'line.delim'='\n',    'serialization.format'='\t')  STORED AS INPUTFORMAT    'org.apache.hadoop.hive.ql.io.orc.OrcInputFormat'  OUTPUTFORMAT    'org.apache.hadoop.hive.ql.io.orc.OrcOutputFormat' LOCATION   'hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_membership_kpi_ful' TBLPROPERTIES (   'COLUMN_STATS_ACCURATE'='true',    'numFiles'='0',    'numRows'='5749',    'rawDataSize'='2782252',    'totalSize'='0',    'transient_lastDdlTime'='1546942709') Time taken: 3.925 seconds, Fetched: 29 row(s)
+can't find .cdm partition, maybe is's not a partition table, so continue.
+hdfs dfs -rm -r -f hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_membership_kpi_ful
+hdfs dfs -mkdir -p hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_membership_kpi_ful
+hdfs dfs -cp -f hdfs://l-namenode2.dc.cn1:8020/user/hive/warehouse/cdm.db/t_cdm_gc_membership_kpi_ful/* hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_membership_kpi_ful
+success
+[43;31m ============================================14====================================================== [0m
+which: no hbase in (/opt/kylin/bin/:/usr/java/default/bin/:/home/q/java/jdk-default/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/hbase/bin:/opt/hive-1.1.0-cdh5.10.1/bin:/opt/hive-1.1.0-cdh5.10.1/hcatalog/bin:/usr/local/bin:/opt/anaconda3/bin:/home/hive/.local/bin:/home/hive/bin)
+
+Logging initialized using configuration in file:/opt/hive/conf/hive-log4j.properties
+OK
+Time taken: 3.687 seconds, Fetched: 16 row(s)
+1
+which: no hbase in (/opt/kylin/bin/:/usr/java/default/bin/:/home/q/java/jdk-default/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/hbase/bin:/opt/hive-1.1.0-cdh5.10.1/bin:/opt/hive-1.1.0-cdh5.10.1/hcatalog/bin:/usr/local/bin:/opt/anaconda3/bin:/home/hive/.local/bin:/home/hive/bin)
+
+Logging initialized using configuration in file:/opt/hive/conf/hive-log4j.properties
+OK
+Time taken: 3.741 seconds, Fetched: 79 row(s)
+1
+19/03/19 11:59:22 INFO fs.TrashPolicyDefault: Moved: 'hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_contribution_channel_ful' to trash at: hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/.Trash/Current/user/hive/warehouse/cdm.db/t_cdm_gc_summary_contribution_channel_ful1552967962184
+c=`hive -e "show databases" | grep "^cdm$" | wc -l` && if [ $c -eq 1 ];then echo 1; else exit 1; fi
+c=`hive -e "show tables in cdm" | grep "^t_cdm_gc_summary_contribution_channel_ful$" | wc -l` && if [ $c -eq 1 ];then echo 1; else exit 1; fi
+which: no hbase in (/opt/kylin/bin/:/usr/java/default/bin/:/home/q/java/jdk-default/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/hbase/bin:/opt/hive-1.1.0-cdh5.10.1/bin:/opt/hive-1.1.0-cdh5.10.1/hcatalog/bin:/usr/local/bin:/opt/anaconda3/bin:/home/hive/.local/bin:/home/hive/bin)  Logging initialized using configuration in file:/opt/hive/conf/hive-log4j.properties OK CREATE TABLE `cdm.t_cdm_gc_summary_contribution_channel_ful`(   `hotel` string COMMENT 'hotel_code',    `year` int COMMENT '年',    `month` int COMMENT '月',    `day` int COMMENT '日',    `membership_division` string COMMENT '会员区分',    `first_source_code` string COMMENT '一级分类',    `currency_type` string COMMENT '货币',    `diff_type` string COMMENT 'diff_type',    `indicator_type` string COMMENT 'type',    `indicator_value` decimal(22,6) COMMENT 'value') ROW FORMAT SERDE    'org.apache.hadoop.hive.ql.io.orc.OrcSerde'  WITH SERDEPROPERTIES (    'field.delim'='\t',    'line.delim'='\n',    'serialization.format'='\t')  STORED AS INPUTFORMAT    'org.apache.hadoop.hive.ql.io.orc.OrcInputFormat'  OUTPUTFORMAT    'org.apache.hadoop.hive.ql.io.orc.OrcOutputFormat' LOCATION   'hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_contribution_channel_ful' TBLPROPERTIES (   'COLUMN_STATS_ACCURATE'='true',    'numFiles'='0',    'numRows'='1384435',    'rawDataSize'='926221011',    'totalSize'='0',    'transient_lastDdlTime'='1547570896') Time taken: 3.923 seconds, Fetched: 30 row(s)
+can't find .cdm partition, maybe is's not a partition table, so continue.
+hdfs dfs -rm -r -f hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_contribution_channel_ful
+hdfs dfs -mkdir -p hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_contribution_channel_ful
+hdfs dfs -cp -f hdfs://l-namenode2.dc.cn1:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_contribution_channel_ful/* hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_contribution_channel_ful
+success
+[43;31m ============================================15====================================================== [0m
+which: no hbase in (/opt/kylin/bin/:/usr/java/default/bin/:/home/q/java/jdk-default/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/hbase/bin:/opt/hive-1.1.0-cdh5.10.1/bin:/opt/hive-1.1.0-cdh5.10.1/hcatalog/bin:/usr/local/bin:/opt/anaconda3/bin:/home/hive/.local/bin:/home/hive/bin)
+
+Logging initialized using configuration in file:/opt/hive/conf/hive-log4j.properties
+OK
+Time taken: 3.78 seconds, Fetched: 16 row(s)
+1
+which: no hbase in (/opt/kylin/bin/:/usr/java/default/bin/:/home/q/java/jdk-default/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/hbase/bin:/opt/hive-1.1.0-cdh5.10.1/bin:/opt/hive-1.1.0-cdh5.10.1/hcatalog/bin:/usr/local/bin:/opt/anaconda3/bin:/home/hive/.local/bin:/home/hive/bin)
+
+Logging initialized using configuration in file:/opt/hive/conf/hive-log4j.properties
+OK
+Time taken: 3.783 seconds, Fetched: 79 row(s)
+1
+19/03/19 11:59:50 INFO fs.TrashPolicyDefault: Moved: 'hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_contribution_ful' to trash at: hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/.Trash/Current/user/hive/warehouse/cdm.db/t_cdm_gc_summary_contribution_ful1552967990593
+c=`hive -e "show databases" | grep "^cdm$" | wc -l` && if [ $c -eq 1 ];then echo 1; else exit 1; fi
+c=`hive -e "show tables in cdm" | grep "^t_cdm_gc_summary_contribution_ful$" | wc -l` && if [ $c -eq 1 ];then echo 1; else exit 1; fi
+which: no hbase in (/opt/kylin/bin/:/usr/java/default/bin/:/home/q/java/jdk-default/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/hbase/bin:/opt/hive-1.1.0-cdh5.10.1/bin:/opt/hive-1.1.0-cdh5.10.1/hcatalog/bin:/usr/local/bin:/opt/anaconda3/bin:/home/hive/.local/bin:/home/hive/bin)  Logging initialized using configuration in file:/opt/hive/conf/hive-log4j.properties OK CREATE TABLE `cdm.t_cdm_gc_summary_contribution_ful`(   `hotel` string COMMENT 'hotel_code',    `year` int COMMENT '年',    `month` int COMMENT '月',    `day` int COMMENT '日',    `share_performance` string COMMENT '积分类型',    `membership_division` string COMMENT '会员区分',    `membership_level` string COMMENT '会员等级',    `currency_type` string COMMENT '货币',    `diff_type` string COMMENT 'diff_type',    `indicator_type` string COMMENT 'type',    `indicator_value` decimal(22,6) COMMENT 'value') ROW FORMAT SERDE    'org.apache.hadoop.hive.ql.io.orc.OrcSerde'  WITH SERDEPROPERTIES (    'field.delim'='\t',    'line.delim'='\n',    'serialization.format'='\t')  STORED AS INPUTFORMAT    'org.apache.hadoop.hive.ql.io.orc.OrcInputFormat'  OUTPUTFORMAT    'org.apache.hadoop.hive.ql.io.orc.OrcOutputFormat' LOCATION   'hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_contribution_ful' TBLPROPERTIES (   'COLUMN_STATS_ACCURATE'='true',    'numFiles'='0',    'numRows'='9943200',    'rawDataSize'='7471593924',    'totalSize'='0',    'transient_lastDdlTime'='1547570253') Time taken: 3.923 seconds, Fetched: 31 row(s)
+can't find .cdm partition, maybe is's not a partition table, so continue.
+hdfs dfs -rm -r -f hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_contribution_ful
+hdfs dfs -mkdir -p hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_contribution_ful
+hdfs dfs -cp -f hdfs://l-namenode2.dc.cn1:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_contribution_ful/* hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_contribution_ful
+success
+[43;31m ============================================16====================================================== [0m
+which: no hbase in (/opt/kylin/bin/:/usr/java/default/bin/:/home/q/java/jdk-default/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/hbase/bin:/opt/hive-1.1.0-cdh5.10.1/bin:/opt/hive-1.1.0-cdh5.10.1/hcatalog/bin:/usr/local/bin:/opt/anaconda3/bin:/home/hive/.local/bin:/home/hive/bin)
+
+Logging initialized using configuration in file:/opt/hive/conf/hive-log4j.properties
+OK
+Time taken: 3.965 seconds, Fetched: 16 row(s)
+1
+which: no hbase in (/opt/kylin/bin/:/usr/java/default/bin/:/home/q/java/jdk-default/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/hbase/bin:/opt/hive-1.1.0-cdh5.10.1/bin:/opt/hive-1.1.0-cdh5.10.1/hcatalog/bin:/usr/local/bin:/opt/anaconda3/bin:/home/hive/.local/bin:/home/hive/bin)
+
+Logging initialized using configuration in file:/opt/hive/conf/hive-log4j.properties
+OK
+Time taken: 3.845 seconds, Fetched: 79 row(s)
+1
+19/03/19 12:00:19 INFO fs.TrashPolicyDefault: Moved: 'hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_feeder_market_ful' to trash at: hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/.Trash/Current/user/hive/warehouse/cdm.db/t_cdm_gc_summary_feeder_market_ful1552968019747
+c=`hive -e "show databases" | grep "^cdm$" | wc -l` && if [ $c -eq 1 ];then echo 1; else exit 1; fi
+c=`hive -e "show tables in cdm" | grep "^t_cdm_gc_summary_feeder_market_ful$" | wc -l` && if [ $c -eq 1 ];then echo 1; else exit 1; fi
+which: no hbase in (/opt/kylin/bin/:/usr/java/default/bin/:/home/q/java/jdk-default/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/hbase/bin:/opt/hive-1.1.0-cdh5.10.1/bin:/opt/hive-1.1.0-cdh5.10.1/hcatalog/bin:/usr/local/bin:/opt/anaconda3/bin:/home/hive/.local/bin:/home/hive/bin)  Logging initialized using configuration in file:/opt/hive/conf/hive-log4j.properties OK CREATE TABLE `cdm.t_cdm_gc_summary_feeder_market_ful`(   `hotel` string COMMENT 'hotel',    `year` int COMMENT 'year',    `month` int COMMENT 'month',    `day` int COMMENT 'day',    `area_type` string COMMENT 'area_type',    `area` string COMMENT 'area',    `diff_type` string COMMENT 'diff_type',    `membership_division` string COMMENT 'membership_division',    `currency_type` string COMMENT 'currency_type',    `indicator_type` string COMMENT 'indicator_type',    `indicator_value` decimal(22,6) COMMENT 'indicator_value') COMMENT 'gc_summary_feeder_market' ROW FORMAT SERDE    'org.apache.hadoop.hive.ql.io.orc.OrcSerde'  WITH SERDEPROPERTIES (    'field.delim'='\t',    'line.delim'='\n',    'serialization.format'='\t')  STORED AS INPUTFORMAT    'org.apache.hadoop.hive.ql.io.orc.OrcInputFormat'  OUTPUTFORMAT    'org.apache.hadoop.hive.ql.io.orc.OrcOutputFormat' LOCATION   'hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_feeder_market_ful' TBLPROPERTIES (   'COLUMN_STATS_ACCURATE'='true',    'numFiles'='0',    'numRows'='2049820',    'rawDataSize'='1542479870',    'totalSize'='0',    'transient_lastDdlTime'='1547571586') Time taken: 4.142 seconds, Fetched: 32 row(s)
+can't find .cdm partition, maybe is's not a partition table, so continue.
+hdfs dfs -rm -r -f hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_feeder_market_ful
+hdfs dfs -mkdir -p hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_feeder_market_ful
+hdfs dfs -cp -f hdfs://l-namenode2.dc.cn1:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_feeder_market_ful/* hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_feeder_market_ful
+success
+[43;31m ============================================17====================================================== [0m
+which: no hbase in (/opt/kylin/bin/:/usr/java/default/bin/:/home/q/java/jdk-default/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/hbase/bin:/opt/hive-1.1.0-cdh5.10.1/bin:/opt/hive-1.1.0-cdh5.10.1/hcatalog/bin:/usr/local/bin:/opt/anaconda3/bin:/home/hive/.local/bin:/home/hive/bin)
+
+Logging initialized using configuration in file:/opt/hive/conf/hive-log4j.properties
+OK
+Time taken: 3.828 seconds, Fetched: 16 row(s)
+1
+which: no hbase in (/opt/kylin/bin/:/usr/java/default/bin/:/home/q/java/jdk-default/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/hbase/bin:/opt/hive-1.1.0-cdh5.10.1/bin:/opt/hive-1.1.0-cdh5.10.1/hcatalog/bin:/usr/local/bin:/opt/anaconda3/bin:/home/hive/.local/bin:/home/hive/bin)
+
+Logging initialized using configuration in file:/opt/hive/conf/hive-log4j.properties
+OK
+Time taken: 3.955 seconds, Fetched: 79 row(s)
+1
+19/03/19 12:00:48 INFO fs.TrashPolicyDefault: Moved: 'hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_loyalty_ful' to trash at: hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/.Trash/Current/user/hive/warehouse/cdm.db/t_cdm_gc_summary_loyalty_ful1552968048582
+c=`hive -e "show databases" | grep "^cdm$" | wc -l` && if [ $c -eq 1 ];then echo 1; else exit 1; fi
+c=`hive -e "show tables in cdm" | grep "^t_cdm_gc_summary_loyalty_ful$" | wc -l` && if [ $c -eq 1 ];then echo 1; else exit 1; fi
+which: no hbase in (/opt/kylin/bin/:/usr/java/default/bin/:/home/q/java/jdk-default/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/hbase/bin:/opt/hive-1.1.0-cdh5.10.1/bin:/opt/hive-1.1.0-cdh5.10.1/hcatalog/bin:/usr/local/bin:/opt/anaconda3/bin:/home/hive/.local/bin:/home/hive/bin)  Logging initialized using configuration in file:/opt/hive/conf/hive-log4j.properties OK CREATE TABLE `cdm.t_cdm_gc_summary_loyalty_ful`(   `hotel` string COMMENT 'hotel_code',    `year` int COMMENT '年',    `month` int COMMENT '月',    `day` int COMMENT '日',    `membership_division` string COMMENT '会员区分',    `membership_level` string COMMENT '会员等级',    `currency_type` string COMMENT '货币',    `diff_type` string COMMENT 'diff_type',    `indicator_type` string COMMENT 'type',    `indicator_value` decimal(22,6) COMMENT 'value') ROW FORMAT SERDE    'org.apache.hadoop.hive.ql.io.orc.OrcSerde'  WITH SERDEPROPERTIES (    'field.delim'='\t',    'line.delim'='\n',    'serialization.format'='\t')  STORED AS INPUTFORMAT    'org.apache.hadoop.hive.ql.io.orc.OrcInputFormat'  OUTPUTFORMAT    'org.apache.hadoop.hive.ql.io.orc.OrcOutputFormat' LOCATION   'hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_loyalty_ful' TBLPROPERTIES (   'COLUMN_STATS_ACCURATE'='true',    'numFiles'='0',    'numRows'='84134',    'rawDataSize'='48210842',    'totalSize'='0',    'transient_lastDdlTime'='1546927839') Time taken: 4.066 seconds, Fetched: 30 row(s)
+can't find .cdm partition, maybe is's not a partition table, so continue.
+hdfs dfs -rm -r -f hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_loyalty_ful
+hdfs dfs -mkdir -p hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_loyalty_ful
+hdfs dfs -cp -f hdfs://l-namenode2.dc.cn1:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_loyalty_ful/* hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_loyalty_ful
+success
+[43;31m ============================================18====================================================== [0m
+which: no hbase in (/opt/kylin/bin/:/usr/java/default/bin/:/home/q/java/jdk-default/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/hbase/bin:/opt/hive-1.1.0-cdh5.10.1/bin:/opt/hive-1.1.0-cdh5.10.1/hcatalog/bin:/usr/local/bin:/opt/anaconda3/bin:/home/hive/.local/bin:/home/hive/bin)
+
+Logging initialized using configuration in file:/opt/hive/conf/hive-log4j.properties
+OK
+Time taken: 3.979 seconds, Fetched: 16 row(s)
+1
+which: no hbase in (/opt/kylin/bin/:/usr/java/default/bin/:/home/q/java/jdk-default/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/hbase/bin:/opt/hive-1.1.0-cdh5.10.1/bin:/opt/hive-1.1.0-cdh5.10.1/hcatalog/bin:/usr/local/bin:/opt/anaconda3/bin:/home/hive/.local/bin:/home/hive/bin)
+
+Logging initialized using configuration in file:/opt/hive/conf/hive-log4j.properties
+OK
+Time taken: 3.783 seconds, Fetched: 79 row(s)
+1
+19/03/19 12:01:17 INFO fs.TrashPolicyDefault: Moved: 'hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_loyalty_member_ful' to trash at: hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/.Trash/Current/user/hive/warehouse/cdm.db/t_cdm_gc_summary_loyalty_member_ful1552968077795
+c=`hive -e "show databases" | grep "^cdm$" | wc -l` && if [ $c -eq 1 ];then echo 1; else exit 1; fi
+c=`hive -e "show tables in cdm" | grep "^t_cdm_gc_summary_loyalty_member_ful$" | wc -l` && if [ $c -eq 1 ];then echo 1; else exit 1; fi
+which: no hbase in (/opt/kylin/bin/:/usr/java/default/bin/:/home/q/java/jdk-default/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/hbase/bin:/opt/hive-1.1.0-cdh5.10.1/bin:/opt/hive-1.1.0-cdh5.10.1/hcatalog/bin:/usr/local/bin:/opt/anaconda3/bin:/home/hive/.local/bin:/home/hive/bin)  Logging initialized using configuration in file:/opt/hive/conf/hive-log4j.properties OK CREATE TABLE `cdm.t_cdm_gc_summary_loyalty_member_ful`(   `hotel` string COMMENT 'hotel',    `year` int COMMENT 'year',    `month` int COMMENT 'month',    `diff_type` string COMMENT 'day',    `membership_division` string COMMENT 'membership_division',    `membership_level` string COMMENT 'membership_level',    `stay_division` string COMMENT 'stay_division',    `membership_card_no` decimal(22,6) COMMENT 'membership_card_no',    `name_id` decimal(22,6) COMMENT 'name_id') COMMENT 't_cdm_gc_summary_loyalty_member' ROW FORMAT SERDE    'org.apache.hadoop.hive.ql.io.orc.OrcSerde'  WITH SERDEPROPERTIES (    'field.delim'='\t',    'line.delim'='\n',    'serialization.format'='\t')  STORED AS INPUTFORMAT    'org.apache.hadoop.hive.ql.io.orc.OrcInputFormat'  OUTPUTFORMAT    'org.apache.hadoop.hive.ql.io.orc.OrcOutputFormat' LOCATION   'hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_loyalty_member_ful' TBLPROPERTIES (   'COLUMN_STATS_ACCURATE'='true',    'numFiles'='0',    'numRows'='29027976',    'rawDataSize'='17141759056',    'totalSize'='0',    'transient_lastDdlTime'='1546993031') Time taken: 4.099 seconds, Fetched: 30 row(s)
+can't find .cdm partition, maybe is's not a partition table, so continue.
+hdfs dfs -rm -r -f hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_loyalty_member_ful
+hdfs dfs -mkdir -p hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_loyalty_member_ful
+hdfs dfs -cp -f hdfs://l-namenode2.dc.cn1:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_loyalty_member_ful/* hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_loyalty_member_ful
+success
+[43;31m ============================================19====================================================== [0m
+which: no hbase in (/opt/kylin/bin/:/usr/java/default/bin/:/home/q/java/jdk-default/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/hbase/bin:/opt/hive-1.1.0-cdh5.10.1/bin:/opt/hive-1.1.0-cdh5.10.1/hcatalog/bin:/usr/local/bin:/opt/anaconda3/bin:/home/hive/.local/bin:/home/hive/bin)
+
+Logging initialized using configuration in file:/opt/hive/conf/hive-log4j.properties
+OK
+Time taken: 3.814 seconds, Fetched: 16 row(s)
+1
+which: no hbase in (/opt/kylin/bin/:/usr/java/default/bin/:/home/q/java/jdk-default/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/hbase/bin:/opt/hive-1.1.0-cdh5.10.1/bin:/opt/hive-1.1.0-cdh5.10.1/hcatalog/bin:/usr/local/bin:/opt/anaconda3/bin:/home/hive/.local/bin:/home/hive/bin)
+
+Logging initialized using configuration in file:/opt/hive/conf/hive-log4j.properties
+OK
+Time taken: 3.754 seconds, Fetched: 79 row(s)
+1
+19/03/19 12:01:49 INFO fs.TrashPolicyDefault: Moved: 'hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_loyalty_visitor_ful' to trash at: hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/.Trash/Current/user/hive/warehouse/cdm.db/t_cdm_gc_summary_loyalty_visitor_ful1552968109402
+c=`hive -e "show databases" | grep "^cdm$" | wc -l` && if [ $c -eq 1 ];then echo 1; else exit 1; fi
+c=`hive -e "show tables in cdm" | grep "^t_cdm_gc_summary_loyalty_visitor_ful$" | wc -l` && if [ $c -eq 1 ];then echo 1; else exit 1; fi
+which: no hbase in (/opt/kylin/bin/:/usr/java/default/bin/:/home/q/java/jdk-default/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/hbase/bin:/opt/hive-1.1.0-cdh5.10.1/bin:/opt/hive-1.1.0-cdh5.10.1/hcatalog/bin:/usr/local/bin:/opt/anaconda3/bin:/home/hive/.local/bin:/home/hive/bin)  Logging initialized using configuration in file:/opt/hive/conf/hive-log4j.properties OK CREATE TABLE `cdm.t_cdm_gc_summary_loyalty_visitor_ful`(   `hotel` string COMMENT 'hotel',    `year` int COMMENT 'year',    `month` int COMMENT 'month',    `day` int COMMENT 'day',    `diff_type` string COMMENT 'diff_type',    `stay_hotel` string COMMENT 'stay_hotel',    `stay_transaction` int COMMENT 'stay_transaction',    `stay_transaction_by_hub` int COMMENT 'stay_transaction_by_hub',    `stay_transaction_by_group` int COMMENT 'stay_transaction_by_group',    `membership_card_no` bigint COMMENT 'membership_card_no',    `name_id` int COMMENT 'name_id') COMMENT 't_cdm_gc_summary_loyalty_member' ROW FORMAT SERDE    'org.apache.hadoop.hive.ql.io.orc.OrcSerde'  WITH SERDEPROPERTIES (    'field.delim'='\t',    'line.delim'='\n',    'serialization.format'='\t')  STORED AS INPUTFORMAT    'org.apache.hadoop.hive.ql.io.orc.OrcInputFormat'  OUTPUTFORMAT    'org.apache.hadoop.hive.ql.io.orc.OrcOutputFormat' LOCATION   'hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_loyalty_visitor_ful' TBLPROPERTIES (   'COLUMN_STATS_ACCURATE'='true',    'numFiles'='0',    'numRows'='31125860',    'rawDataSize'='9167347780',    'totalSize'='0',    'transient_lastDdlTime'='1546916365') Time taken: 3.989 seconds, Fetched: 32 row(s)
+can't find .cdm partition, maybe is's not a partition table, so continue.
+hdfs dfs -rm -r -f hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_loyalty_visitor_ful
+hdfs dfs -mkdir -p hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_loyalty_visitor_ful
+hdfs dfs -cp -f hdfs://l-namenode2.dc.cn1:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_loyalty_visitor_ful/* hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_loyalty_visitor_ful
+success
+[43;31m ============================================20====================================================== [0m
+which: no hbase in (/opt/kylin/bin/:/usr/java/default/bin/:/home/q/java/jdk-default/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/hbase/bin:/opt/hive-1.1.0-cdh5.10.1/bin:/opt/hive-1.1.0-cdh5.10.1/hcatalog/bin:/usr/local/bin:/opt/anaconda3/bin:/home/hive/.local/bin:/home/hive/bin)
+
+Logging initialized using configuration in file:/opt/hive/conf/hive-log4j.properties
+OK
+Time taken: 3.931 seconds, Fetched: 16 row(s)
+1
+which: no hbase in (/opt/kylin/bin/:/usr/java/default/bin/:/home/q/java/jdk-default/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/hbase/bin:/opt/hive-1.1.0-cdh5.10.1/bin:/opt/hive-1.1.0-cdh5.10.1/hcatalog/bin:/usr/local/bin:/opt/anaconda3/bin:/home/hive/.local/bin:/home/hive/bin)
+
+Logging initialized using configuration in file:/opt/hive/conf/hive-log4j.properties
+OK
+Time taken: 3.825 seconds, Fetched: 79 row(s)
+1
+19/03/19 12:02:19 INFO fs.TrashPolicyDefault: Moved: 'hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_visitor_stay_repeat_ful' to trash at: hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/.Trash/Current/user/hive/warehouse/cdm.db/t_cdm_gc_summary_visitor_stay_repeat_ful1552968139898
+c=`hive -e "show databases" | grep "^cdm$" | wc -l` && if [ $c -eq 1 ];then echo 1; else exit 1; fi
+c=`hive -e "show tables in cdm" | grep "^t_cdm_gc_summary_visitor_stay_repeat_ful$" | wc -l` && if [ $c -eq 1 ];then echo 1; else exit 1; fi
+which: no hbase in (/opt/kylin/bin/:/usr/java/default/bin/:/home/q/java/jdk-default/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/hbase/bin:/opt/hive-1.1.0-cdh5.10.1/bin:/opt/hive-1.1.0-cdh5.10.1/hcatalog/bin:/usr/local/bin:/opt/anaconda3/bin:/home/hive/.local/bin:/home/hive/bin)  Logging initialized using configuration in file:/opt/hive/conf/hive-log4j.properties OK CREATE TABLE `cdm.t_cdm_gc_summary_visitor_stay_repeat_ful`(   `hotel` string COMMENT 'hotel',    `region` string COMMENT 'region',    `year` int COMMENT 'year',    `month` int COMMENT 'month',    `day` int COMMENT 'day',    `stay_transaction` int COMMENT 'stay_transaction',    `membership_card_no` bigint COMMENT 'membership_card_no',    `name_id` int COMMENT 'name_id') COMMENT '用户repeatStay统计' ROW FORMAT SERDE    'org.apache.hadoop.hive.ql.io.orc.OrcSerde'  WITH SERDEPROPERTIES (    'field.delim'='\t',    'line.delim'='\n',    'serialization.format'='\t')  STORED AS INPUTFORMAT    'org.apache.hadoop.hive.ql.io.orc.OrcInputFormat'  OUTPUTFORMAT    'org.apache.hadoop.hive.ql.io.orc.OrcOutputFormat' LOCATION   'hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_visitor_stay_repeat_ful' TBLPROPERTIES (   'COLUMN_STATS_ACCURATE'='true',    'numFiles'='0',    'numRows'='0',    'rawDataSize'='0',    'totalSize'='0',    'transient_lastDdlTime'='1546917497') Time taken: 3.945 seconds, Fetched: 29 row(s)
+can't find .cdm partition, maybe is's not a partition table, so continue.
+hdfs dfs -rm -r -f hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_visitor_stay_repeat_ful
+hdfs dfs -mkdir -p hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_visitor_stay_repeat_ful
+hdfs dfs -cp -f hdfs://l-namenode2.dc.cn1:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_visitor_stay_repeat_ful/* hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_visitor_stay_repeat_ful
+success
+[43;31m ============================================21====================================================== [0m
+which: no hbase in (/opt/kylin/bin/:/usr/java/default/bin/:/home/q/java/jdk-default/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/hbase/bin:/opt/hive-1.1.0-cdh5.10.1/bin:/opt/hive-1.1.0-cdh5.10.1/hcatalog/bin:/usr/local/bin:/opt/anaconda3/bin:/home/hive/.local/bin:/home/hive/bin)
+
+Logging initialized using configuration in file:/opt/hive/conf/hive-log4j.properties
+OK
+Time taken: 3.686 seconds, Fetched: 16 row(s)
+1
+which: no hbase in (/opt/kylin/bin/:/usr/java/default/bin/:/home/q/java/jdk-default/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/hbase/bin:/opt/hive-1.1.0-cdh5.10.1/bin:/opt/hive-1.1.0-cdh5.10.1/hcatalog/bin:/usr/local/bin:/opt/anaconda3/bin:/home/hive/.local/bin:/home/hive/bin)
+
+Logging initialized using configuration in file:/opt/hive/conf/hive-log4j.properties
+OK
+Time taken: 3.799 seconds, Fetched: 79 row(s)
+1
+19/03/19 12:03:06 INFO fs.TrashPolicyDefault: Moved: 'hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_rooms_market_position_summary_ful' to trash at: hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/.Trash/Current/user/hive/warehouse/cdm.db/t_cdm_rooms_market_position_summary_ful1552968186288
+c=`hive -e "show databases" | grep "^cdm$" | wc -l` && if [ $c -eq 1 ];then echo 1; else exit 1; fi
+c=`hive -e "show tables in cdm" | grep "^t_cdm_rooms_market_position_summary_ful$" | wc -l` && if [ $c -eq 1 ];then echo 1; else exit 1; fi
+which: no hbase in (/opt/kylin/bin/:/usr/java/default/bin/:/home/q/java/jdk-default/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/hbase/bin:/opt/hive-1.1.0-cdh5.10.1/bin:/opt/hive-1.1.0-cdh5.10.1/hcatalog/bin:/usr/local/bin:/opt/anaconda3/bin:/home/hive/.local/bin:/home/hive/bin)  Logging initialized using configuration in file:/opt/hive/conf/hive-log4j.properties OK CREATE EXTERNAL TABLE `cdm.t_cdm_rooms_market_position_summary_ful`(   `hotel` string COMMENT '酒店标识',    `year` int COMMENT '年份',    `month` int COMMENT '月份',    `diff_type` string COMMENT '区分指标',    `currency_type` string COMMENT '指标类型',    `indicator_type` string COMMENT '货币类型',    `indicator_value` decimal(22,6) COMMENT '指标值') COMMENT '酒店市场情况' ROW FORMAT SERDE    'org.apache.hadoop.hive.ql.io.orc.OrcSerde'  WITH SERDEPROPERTIES (    'field.delim'='\t',    'line.delim'='\n',    'serialization.format'='\t')  STORED AS INPUTFORMAT    'org.apache.hadoop.hive.ql.io.orc.OrcInputFormat'  OUTPUTFORMAT    'org.apache.hadoop.hive.ql.io.orc.OrcOutputFormat' LOCATION   'hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_rooms_market_position_summary_ful' TBLPROPERTIES (   'COLUMN_STATS_ACCURATE'='true',    'numFiles'='2',    'numRows'='469050',    'rawDataSize'='228323088',    'totalSize'='1151575',    'transient_lastDdlTime'='1545283128') Time taken: 3.95 seconds, Fetched: 28 row(s)
+can't find EXTERNAL .cdm partition, maybe is's not a partition table, so continue.
+hdfs dfs -rm -r -f hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_rooms_market_position_summary_ful
+hdfs dfs -mkdir -p hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_rooms_market_position_summary_ful
+hdfs dfs -cp -f hdfs://l-namenode2.dc.cn1:8020/user/hive/warehouse/cdm.db/t_cdm_rooms_market_position_summary_ful/* hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_rooms_market_position_summary_ful
+success
+[43;31m ============================================22====================================================== [0m
+which: no hbase in (/opt/kylin/bin/:/usr/java/default/bin/:/home/q/java/jdk-default/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/hbase/bin:/opt/hive-1.1.0-cdh5.10.1/bin:/opt/hive-1.1.0-cdh5.10.1/hcatalog/bin:/usr/local/bin:/opt/anaconda3/bin:/home/hive/.local/bin:/home/hive/bin)
+
+Logging initialized using configuration in file:/opt/hive/conf/hive-log4j.properties
+OK
+Time taken: 3.765 seconds, Fetched: 16 row(s)
+1
+which: no hbase in (/opt/kylin/bin/:/usr/java/default/bin/:/home/q/java/jdk-default/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/hbase/bin:/opt/hive-1.1.0-cdh5.10.1/bin:/opt/hive-1.1.0-cdh5.10.1/hcatalog/bin:/usr/local/bin:/opt/anaconda3/bin:/home/hive/.local/bin:/home/hive/bin)
+
+Logging initialized using configuration in file:/opt/hive/conf/hive-log4j.properties
+OK
+Time taken: 3.852 seconds, Fetched: 79 row(s)
+1
+19/03/19 12:03:34 INFO fs.TrashPolicyDefault: Moved: 'hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_rooms_otb_ful' to trash at: hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/.Trash/Current/user/hive/warehouse/cdm.db/t_cdm_rooms_otb_ful1552968214647
+c=`hive -e "show databases" | grep "^cdm$" | wc -l` && if [ $c -eq 1 ];then echo 1; else exit 1; fi
+c=`hive -e "show tables in cdm" | grep "^t_cdm_rooms_otb_ful$" | wc -l` && if [ $c -eq 1 ];then echo 1; else exit 1; fi
+which: no hbase in (/opt/kylin/bin/:/usr/java/default/bin/:/home/q/java/jdk-default/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/hbase/bin:/opt/hive-1.1.0-cdh5.10.1/bin:/opt/hive-1.1.0-cdh5.10.1/hcatalog/bin:/usr/local/bin:/opt/anaconda3/bin:/home/hive/.local/bin:/home/hive/bin)  Logging initialized using configuration in file:/opt/hive/conf/hive-log4j.properties OK CREATE TABLE `cdm.t_cdm_rooms_otb_ful`(   `hotel` string COMMENT 'hotel code',    `year` int COMMENT 'year',    `month` int COMMENT 'month',    `day` int COMMENT 'day',    `trunc_year` int COMMENT 'trunc_year',    `trunc_month` int COMMENT 'trunc_month',    `trunc_day` int COMMENT 'trunc_day',    `diff_type` string COMMENT '',    `currency_type` string COMMENT '货币类型',    `indicator_type` string COMMENT ' type',    `indicator_value` decimal(22,6) COMMENT '') COMMENT 'otb数据' ROW FORMAT SERDE    'org.apache.hadoop.hive.ql.io.orc.OrcSerde'  WITH SERDEPROPERTIES (    'field.delim'='\t',    'line.delim'='\n',    'serialization.format'='\t')  STORED AS INPUTFORMAT    'org.apache.hadoop.hive.ql.io.orc.OrcInputFormat'  OUTPUTFORMAT    'org.apache.hadoop.hive.ql.io.orc.OrcOutputFormat' LOCATION   'hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_rooms_otb_ful' TBLPROPERTIES (   'COLUMN_STATS_ACCURATE'='true',    'numFiles'='6',    'numRows'='445483',    'rawDataSize'='222846542',    'totalSize'='2052092',    'transient_lastDdlTime'='1546487345') Time taken: 3.994 seconds, Fetched: 32 row(s)
+can't find .cdm partition, maybe is's not a partition table, so continue.
+hdfs dfs -rm -r -f hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_rooms_otb_ful
+hdfs dfs -mkdir -p hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_rooms_otb_ful
+hdfs dfs -cp -f hdfs://l-namenode2.dc.cn1:8020/user/hive/warehouse/cdm.db/t_cdm_rooms_otb_ful/* hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_rooms_otb_ful
+success
+[43;31m ============================================23====================================================== [0m
+which: no hbase in (/opt/kylin/bin/:/usr/java/default/bin/:/home/q/java/jdk-default/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/hbase/bin:/opt/hive-1.1.0-cdh5.10.1/bin:/opt/hive-1.1.0-cdh5.10.1/hcatalog/bin:/usr/local/bin:/opt/anaconda3/bin:/home/hive/.local/bin:/home/hive/bin)
+
+Logging initialized using configuration in file:/opt/hive/conf/hive-log4j.properties
+OK
+Time taken: 3.845 seconds, Fetched: 16 row(s)
+1
+which: no hbase in (/opt/kylin/bin/:/usr/java/default/bin/:/home/q/java/jdk-default/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/hbase/bin:/opt/hive-1.1.0-cdh5.10.1/bin:/opt/hive-1.1.0-cdh5.10.1/hcatalog/bin:/usr/local/bin:/opt/anaconda3/bin:/home/hive/.local/bin:/home/hive/bin)
+
+Logging initialized using configuration in file:/opt/hive/conf/hive-log4j.properties
+OK
+Time taken: 3.831 seconds, Fetched: 79 row(s)
+1
+19/03/19 12:04:03 INFO fs.TrashPolicyDefault: Moved: 'hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_loyalty_member_ful' to trash at: hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/.Trash/Current/user/hive/warehouse/cdm.db/t_cdm_gc_summary_loyalty_member_ful1552968243111
+c=`hive -e "show databases" | grep "^cdm$" | wc -l` && if [ $c -eq 1 ];then echo 1; else exit 1; fi
+c=`hive -e "show tables in cdm" | grep "^t_cdm_gc_summary_loyalty_member_ful$" | wc -l` && if [ $c -eq 1 ];then echo 1; else exit 1; fi
+which: no hbase in (/opt/kylin/bin/:/usr/java/default/bin/:/home/q/java/jdk-default/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/hbase/bin:/opt/hive-1.1.0-cdh5.10.1/bin:/opt/hive-1.1.0-cdh5.10.1/hcatalog/bin:/usr/local/bin:/opt/anaconda3/bin:/home/hive/.local/bin:/home/hive/bin)  Logging initialized using configuration in file:/opt/hive/conf/hive-log4j.properties OK CREATE TABLE `cdm.t_cdm_gc_summary_loyalty_member_ful`(   `hotel` string COMMENT 'hotel',    `year` int COMMENT 'year',    `month` int COMMENT 'month',    `diff_type` string COMMENT 'day',    `membership_division` string COMMENT 'membership_division',    `membership_level` string COMMENT 'membership_level',    `stay_division` string COMMENT 'stay_division',    `membership_card_no` decimal(22,6) COMMENT 'membership_card_no',    `name_id` decimal(22,6) COMMENT 'name_id') COMMENT 't_cdm_gc_summary_loyalty_member' ROW FORMAT SERDE    'org.apache.hadoop.hive.ql.io.orc.OrcSerde'  WITH SERDEPROPERTIES (    'field.delim'='\t',    'line.delim'='\n',    'serialization.format'='\t')  STORED AS INPUTFORMAT    'org.apache.hadoop.hive.ql.io.orc.OrcInputFormat'  OUTPUTFORMAT    'org.apache.hadoop.hive.ql.io.orc.OrcOutputFormat' LOCATION   'hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_loyalty_member_ful' TBLPROPERTIES (   'COLUMN_STATS_ACCURATE'='true',    'numFiles'='0',    'numRows'='29027976',    'rawDataSize'='17141759056',    'totalSize'='0',    'transient_lastDdlTime'='1546993031') Time taken: 3.864 seconds, Fetched: 30 row(s)
+can't find .cdm partition, maybe is's not a partition table, so continue.
+hdfs dfs -rm -r -f hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_loyalty_member_ful
+hdfs dfs -mkdir -p hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_loyalty_member_ful
+hdfs dfs -cp -f hdfs://l-namenode2.dc.cn1:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_loyalty_member_ful/* hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_loyalty_member_ful
+success
+[43;31m ============================================24====================================================== [0m
+which: no hbase in (/opt/kylin/bin/:/usr/java/default/bin/:/home/q/java/jdk-default/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/hbase/bin:/opt/hive-1.1.0-cdh5.10.1/bin:/opt/hive-1.1.0-cdh5.10.1/hcatalog/bin:/usr/local/bin:/opt/anaconda3/bin:/home/hive/.local/bin:/home/hive/bin)
+
+Logging initialized using configuration in file:/opt/hive/conf/hive-log4j.properties
+OK
+Time taken: 3.823 seconds, Fetched: 16 row(s)
+1
+which: no hbase in (/opt/kylin/bin/:/usr/java/default/bin/:/home/q/java/jdk-default/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/hbase/bin:/opt/hive-1.1.0-cdh5.10.1/bin:/opt/hive-1.1.0-cdh5.10.1/hcatalog/bin:/usr/local/bin:/opt/anaconda3/bin:/home/hive/.local/bin:/home/hive/bin)
+
+Logging initialized using configuration in file:/opt/hive/conf/hive-log4j.properties
+OK
+Time taken: 3.917 seconds, Fetched: 79 row(s)
+1
+19/03/19 12:04:32 INFO fs.TrashPolicyDefault: Moved: 'hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_redemption_ful' to trash at: hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/.Trash/Current/user/hive/warehouse/cdm.db/t_cdm_gc_summary_redemption_ful
+c=`hive -e "show databases" | grep "^cdm$" | wc -l` && if [ $c -eq 1 ];then echo 1; else exit 1; fi
+c=`hive -e "show tables in cdm" | grep "^t_cdm_gc_summary_redemption_ful$" | wc -l` && if [ $c -eq 1 ];then echo 1; else exit 1; fi
+which: no hbase in (/opt/kylin/bin/:/usr/java/default/bin/:/home/q/java/jdk-default/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/hbase/bin:/opt/hive-1.1.0-cdh5.10.1/bin:/opt/hive-1.1.0-cdh5.10.1/hcatalog/bin:/usr/local/bin:/opt/anaconda3/bin:/home/hive/.local/bin:/home/hive/bin)  Logging initialized using configuration in file:/opt/hive/conf/hive-log4j.properties OK CREATE TABLE `cdm.t_cdm_gc_summary_redemption_ful`(   `hotel` string COMMENT 'hotel code',    `year` int COMMENT 'year',    `month` int COMMENT 'month',    `day` int COMMENT 'day',    `award_type` string COMMENT 'award type',    `indicator_type` string COMMENT 'indicator type',    `indicator_value` decimal(22,6) COMMENT 'points',    `membership_level` string COMMENT 'level',    `diff_type` string COMMENT '',    `currency_type` string COMMENT '货币类型') COMMENT '积分兑换cdm' ROW FORMAT SERDE    'org.apache.hadoop.hive.ql.io.orc.OrcSerde'  WITH SERDEPROPERTIES (    'field.delim'='\t',    'line.delim'='\n',    'serialization.format'='\t')  STORED AS INPUTFORMAT    'org.apache.hadoop.hive.ql.io.orc.OrcInputFormat'  OUTPUTFORMAT    'org.apache.hadoop.hive.ql.io.orc.OrcOutputFormat' LOCATION   'hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_redemption_ful' TBLPROPERTIES (   'COLUMN_STATS_ACCURATE'='true',    'numFiles'='10',    'numRows'='166758',    'rawDataSize'='110841435',    'totalSize'='391444',    'transient_lastDdlTime'='1546453394') Time taken: 3.913 seconds, Fetched: 31 row(s)
+can't find .cdm partition, maybe is's not a partition table, so continue.
+hdfs dfs -rm -r -f hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_redemption_ful
+hdfs dfs -mkdir -p hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_redemption_ful
+hdfs dfs -cp -f hdfs://l-namenode2.dc.cn1:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_redemption_ful/* hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_redemption_ful
+success
+[43;31m ============================================25====================================================== [0m
+which: no hbase in (/opt/kylin/bin/:/usr/java/default/bin/:/home/q/java/jdk-default/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/hbase/bin:/opt/hive-1.1.0-cdh5.10.1/bin:/opt/hive-1.1.0-cdh5.10.1/hcatalog/bin:/usr/local/bin:/opt/anaconda3/bin:/home/hive/.local/bin:/home/hive/bin)
+
+Logging initialized using configuration in file:/opt/hive/conf/hive-log4j.properties
+OK
+Time taken: 3.794 seconds, Fetched: 16 row(s)
+1
+which: no hbase in (/opt/kylin/bin/:/usr/java/default/bin/:/home/q/java/jdk-default/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/hbase/bin:/opt/hive-1.1.0-cdh5.10.1/bin:/opt/hive-1.1.0-cdh5.10.1/hcatalog/bin:/usr/local/bin:/opt/anaconda3/bin:/home/hive/.local/bin:/home/hive/bin)
+
+Logging initialized using configuration in file:/opt/hive/conf/hive-log4j.properties
+OK
+Time taken: 3.854 seconds, Fetched: 79 row(s)
+1
+19/03/19 12:05:01 INFO fs.TrashPolicyDefault: Moved: 'hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_unique_redeemers_ful' to trash at: hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/.Trash/Current/user/hive/warehouse/cdm.db/t_cdm_gc_summary_unique_redeemers_ful
+c=`hive -e "show databases" | grep "^cdm$" | wc -l` && if [ $c -eq 1 ];then echo 1; else exit 1; fi
+c=`hive -e "show tables in cdm" | grep "^t_cdm_gc_summary_unique_redeemers_ful$" | wc -l` && if [ $c -eq 1 ];then echo 1; else exit 1; fi
+which: no hbase in (/opt/kylin/bin/:/usr/java/default/bin/:/home/q/java/jdk-default/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/hbase/bin:/opt/hive-1.1.0-cdh5.10.1/bin:/opt/hive-1.1.0-cdh5.10.1/hcatalog/bin:/usr/local/bin:/opt/anaconda3/bin:/home/hive/.local/bin:/home/hive/bin)  Logging initialized using configuration in file:/opt/hive/conf/hive-log4j.properties OK CREATE TABLE `cdm.t_cdm_gc_summary_unique_redeemers_ful`(   `hotel` string COMMENT 'hotel code',    `year` int COMMENT 'year',    `month` int COMMENT 'month',    `day` int COMMENT 'day',    `membership_level` string COMMENT 'level',    `membership_card_no` bigint COMMENT 'membership_card_no',    `name_id` bigint COMMENT 'name_id',    `award_type` string COMMENT 'award type') COMMENT '积分兑换' ROW FORMAT SERDE    'org.apache.hadoop.hive.ql.io.orc.OrcSerde'  WITH SERDEPROPERTIES (    'field.delim'='\t',    'line.delim'='\n',    'serialization.format'='\t')  STORED AS INPUTFORMAT    'org.apache.hadoop.hive.ql.io.orc.OrcInputFormat'  OUTPUTFORMAT    'org.apache.hadoop.hive.ql.io.orc.OrcOutputFormat' LOCATION   'hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_unique_redeemers_ful' TBLPROPERTIES (   'COLUMN_STATS_ACCURATE'='true',    'numFiles'='1',    'numRows'='1068778',    'rawDataSize'='315289510',    'totalSize'='7363894',    'transient_lastDdlTime'='1546446172') Time taken: 3.921 seconds, Fetched: 29 row(s)
+can't find .cdm partition, maybe is's not a partition table, so continue.
+hdfs dfs -rm -r -f hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_unique_redeemers_ful
+hdfs dfs -mkdir -p hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_unique_redeemers_ful
+hdfs dfs -cp -f hdfs://l-namenode2.dc.cn1:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_unique_redeemers_ful/* hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_unique_redeemers_ful
+success
+[43;31m ============================================26====================================================== [0m
+which: no hbase in (/opt/kylin/bin/:/usr/java/default/bin/:/home/q/java/jdk-default/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/hbase/bin:/opt/hive-1.1.0-cdh5.10.1/bin:/opt/hive-1.1.0-cdh5.10.1/hcatalog/bin:/usr/local/bin:/opt/anaconda3/bin:/home/hive/.local/bin:/home/hive/bin)
+
+Logging initialized using configuration in file:/opt/hive/conf/hive-log4j.properties
+OK
+Time taken: 3.691 seconds, Fetched: 16 row(s)
+1
+which: no hbase in (/opt/kylin/bin/:/usr/java/default/bin/:/home/q/java/jdk-default/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/hbase/bin:/opt/hive-1.1.0-cdh5.10.1/bin:/opt/hive-1.1.0-cdh5.10.1/hcatalog/bin:/usr/local/bin:/opt/anaconda3/bin:/home/hive/.local/bin:/home/hive/bin)
+
+Logging initialized using configuration in file:/opt/hive/conf/hive-log4j.properties
+OK
+Time taken: 3.855 seconds, Fetched: 79 row(s)
+1
+19/03/19 12:05:29 INFO fs.TrashPolicyDefault: Moved: 'hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_visitor_stay_stat_ful' to trash at: hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/.Trash/Current/user/hive/warehouse/cdm.db/t_cdm_gc_summary_visitor_stay_stat_ful1552968329902
+c=`hive -e "show databases" | grep "^cdm$" | wc -l` && if [ $c -eq 1 ];then echo 1; else exit 1; fi
+c=`hive -e "show tables in cdm" | grep "^t_cdm_gc_summary_visitor_stay_stat_ful$" | wc -l` && if [ $c -eq 1 ];then echo 1; else exit 1; fi
+which: no hbase in (/opt/kylin/bin/:/usr/java/default/bin/:/home/q/java/jdk-default/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/hbase/bin:/opt/hive-1.1.0-cdh5.10.1/bin:/opt/hive-1.1.0-cdh5.10.1/hcatalog/bin:/usr/local/bin:/opt/anaconda3/bin:/home/hive/.local/bin:/home/hive/bin)  Logging initialized using configuration in file:/opt/hive/conf/hive-log4j.properties OK CREATE TABLE `cdm.t_cdm_gc_summary_visitor_stay_stat_ful`(   `year` int,    `membership_card_no` string,    `region` string,    `month` int,    `time_period` string,    `hotel_num` int) COMMENT '用户Stay统计' ROW FORMAT SERDE    'org.apache.hadoop.hive.ql.io.orc.OrcSerde'  WITH SERDEPROPERTIES (    'field.delim'='\t',    'line.delim'='\n',    'serialization.format'='\t')  STORED AS INPUTFORMAT    'org.apache.hadoop.hive.ql.io.orc.OrcInputFormat'  OUTPUTFORMAT    'org.apache.hadoop.hive.ql.io.orc.OrcOutputFormat' LOCATION   'hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_visitor_stay_stat_ful' TBLPROPERTIES (   'COLUMN_STATS_ACCURATE'='true',    'numFiles'='0',    'numRows'='464235958',    'rawDataSize'='212155832806',    'totalSize'='0',    'transient_lastDdlTime'='1547116655') Time taken: 3.975 seconds, Fetched: 27 row(s)
+can't find .cdm partition, maybe is's not a partition table, so continue.
+hdfs dfs -rm -r -f hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_visitor_stay_stat_ful
+hdfs dfs -mkdir -p hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_visitor_stay_stat_ful
+hdfs dfs -cp -f hdfs://l-namenode2.dc.cn1:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_visitor_stay_stat_ful/* hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/cdm.db/t_cdm_gc_summary_visitor_stay_stat_ful
+success
+[43;31m ============================================27====================================================== [0m
+which: no hbase in (/opt/kylin/bin/:/usr/java/default/bin/:/home/q/java/jdk-default/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/hbase/bin:/opt/hive-1.1.0-cdh5.10.1/bin:/opt/hive-1.1.0-cdh5.10.1/hcatalog/bin:/usr/local/bin:/opt/anaconda3/bin:/home/hive/.local/bin:/home/hive/bin)
+
+Logging initialized using configuration in file:/opt/hive/conf/hive-log4j.properties
+OK
+Time taken: 3.753 seconds, Fetched: 16 row(s)
+1
+which: no hbase in (/opt/kylin/bin/:/usr/java/default/bin/:/home/q/java/jdk-default/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/hbase/bin:/opt/hive-1.1.0-cdh5.10.1/bin:/opt/hive-1.1.0-cdh5.10.1/hcatalog/bin:/usr/local/bin:/opt/anaconda3/bin:/home/hive/.local/bin:/home/hive/bin)
+
+Logging initialized using configuration in file:/opt/hive/conf/hive-log4j.properties
+OK
+Time taken: 3.876 seconds, Fetched: 147 row(s)
+1
+c=`hive -e "show databases" | grep "^edw$" | wc -l` && if [ $c -eq 1 ];then echo 1; else exit 1; fi
+c=`hive -e "show tables in edw" | grep "^d_edw_gc_award_type$" | wc -l` && if [ $c -eq 1 ];then echo 1; else exit 1; fi
+which: no hbase in (/opt/kylin/bin/:/usr/java/default/bin/:/home/q/java/jdk-default/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/hbase/bin:/opt/hive-1.1.0-cdh5.10.1/bin:/opt/hive-1.1.0-cdh5.10.1/hcatalog/bin:/usr/local/bin:/opt/anaconda3/bin:/home/hive/.local/bin:/home/hive/bin)  Logging initialized using configuration in file:/opt/hive/conf/hive-log4j.properties OK CREATE TABLE `edw.d_edw_gc_award_type`(   `award_type` string COMMENT 'award type',    `group_name` string COMMENT '分组',    `short_desc` string COMMENT '短描述',    `long_desc` string COMMENT '长描述') COMMENT '积分兑换维度表' ROW FORMAT SERDE    'org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe'  WITH SERDEPROPERTIES (    'field.delim'='\t',    'line.delim'='\n',    'serialization.format'='\t')  STORED AS INPUTFORMAT    'org.apache.hadoop.mapred.TextInputFormat'  OUTPUTFORMAT    'org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat' LOCATION   'hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/edw.db/d_edw_gc_award_type' TBLPROPERTIES (   'COLUMN_STATS_ACCURATE'='true',    'numFiles'='1',    'totalSize'='549',    'transient_lastDdlTime'='1514286077') Time taken: 4.008 seconds, Fetched: 23 row(s)
+can't find .edw partition, maybe is's not a partition table, so continue.
+hdfs dfs -rm -r -f hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/edw.db/d_edw_gc_award_type
+hdfs dfs -mkdir -p hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/edw.db/d_edw_gc_award_type
+hdfs dfs -cp -f hdfs://l-namenode2.dc.cn1:8020/user/hive/warehouse/edw.db/d_edw_gc_award_type/* hdfs://l-namenode1.beta.dc.cn4:8020/user/hive/warehouse/edw.db/d_edw_gc_award_type
+success
+[43;31m ============================================35====================================================== [0m
